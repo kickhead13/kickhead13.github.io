@@ -53,7 +53,34 @@ This problem is recurring. I am getting better though, so here is a short list o
 I've compiled over time and that helped *me* get better at making software.
 
 1. <b>ALWAYS</b> commit
+Commits are used to track not releases of a yproduct but incremental changes of a code base.
+This means that we shouldn't commit only working code but anyp significant change to a 
+yprogram. Whyp?
 
+Let's sayp you're working on a e-commerce website. You are working on fixing the checkout
+page of the website. In the process of doing so you update the package.json file at the 
+root of your source code to add a new dependency that helps you in creating your
+desired checkout page. 
+
+And so you include the dependency and keep writing the checkout page until it's finished
+and working. Only now you commit your changes but now you're too tired to detail
+the hole process in the commit message so you simply write "Fixed Checkout page."
+
+--- some months go by ---
+
+--- your package.json is (let's say a 1000 lines long) ---
+
+Now you no longer have a need for your checkout page since you now use a third party
+checkout service. You try to look through the package.json to find that old dependency.
+No luck... So you think to look through your commit log and search for your commit
+message, so you look up "Fix Checkout Page"... Tens of monolithical commits come up.
+With thousands of lines of code written in all of them. The worst part? You don't even know
+which commit it is. It's been so long ago.
+
+To fix this you could've commited a "Added checkout dependency to package.json" at some 
+point. But... you didn't... So now you have to sit through a bunch of old commits
+and look for that dependency. A process that could've taken you maybe a minute... now takes 
+you a day of work...
 2. Comments <i>could</i> help, good names <b>always</b> do 
 
 3. &le; 50
@@ -61,8 +88,6 @@ I've compiled over time and that helped *me* get better at making software.
 4. Never deploy manually
 
 5. Nobody gives a <b>fuck</b> about your opinion
-
-6. Seriously... not one person
 
    </pre>
   </body>
